@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 
+    CMS : Contents Management System
+    Wordpress : PHP 언어 베이스 - HTML, JS, CSS
+    Xpress Engine : PHP - HTML, JS, CSS
+    Gnu : PHP - HTML, JS, CSS -
+
+    Cart : Onlineshop solution
+    Prestashop : PHP - HTML, JS, CSS
+    Magento : PHP - HTML, JS, CSS
+
+    로또 번호는
+    1~45까지의 정수 중에 중복되지 않는 숫자 6개ㅐ를 뽑는 게임
+    로또 용지 1장은 최대 5게임을 표현가능
+    1게임 1,000원, 최대 1장은 5,000원
+        1) 로또 번호 1게임은 뽑게 해준다.
+        2. 로또 번호 5게임을 뽑게 해분다.
+        3. 로또 번호를 지정된 게임 수만큼 뽑게 해준다
+        4. 지정된 게임 수만큼 뽑고, 비용을 함께 출력한다. 
+
+    math.floor((Math.random())); = 0~1 사이
+    math.floor((Math.random() * 10) +1); = 1~10 사이
+
+    math.floor((Math.random() * 45) +1); = 1~45 사이 
+-->
+<script type="text/javascript">
+
+
+
+
+var gameCount1 = prompt("게임 수?");
+var prompt1 = parseInt(gameCount1);
+
+if (prompt1 <= 5){
+        for (i = 0; i < gameCount1; i++){
+            var numbers = [];
+            while (numbers.length < 6){
+                var number = Math.floor((Math.random() * 45) + 1);
+                if (numbers.indexOf(number)== -1){
+                    numbers.push(number);
+                };
+            }; 
+            numbers.sort(function(a,b){return a-b});
+            console.log(numbers);
+        };
+    }else {
+        alert ("실행 에러");
+    }
+    
+
+
+
+
+
+// 일상 방식
+    // for (j = 0; j < 5; j++){
+    //     var original_numbers = [];
+    //         for (i = 1; i < 46; i++){
+    //             original_numbers.push(i);
+    //         }
+    //     var numbers = [];
+    //         for (i = 0; i < 6; i++) {    
+    //             var number_index = Math.floor((Math.random() * original_numbers.length));
+    //             var get_number = original_numbers[number_index];
+    //             numbers.push(get_number);
+    //             original_numbers.splice(number_index,1);
+    //     }
+    //     numbers.sort(function(a,b){return a-b});
+    //     console.log(numbers);
+    // };
+    
+    
+
+</script>
+    </head>
+    <body>
+   
+    <!-- <input type="number" class="game_count">How many game do you want</input> -->
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </body>
+</html>
+
+
+
+
+ 
